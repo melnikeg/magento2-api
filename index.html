@@ -1,0 +1,2496 @@
+<!DOCTYPE html><html><head><title>Документація по роботі з Magento API</title><meta charset='utf-8'><link href='https://d31qtcb7c58z3n.cloudfront.net/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="документація-по-роботі-з-magento-api">Документація по роботі з Magento API</h1>
+
+<hr>
+
+<div><div class="toc"><div class="toc">
+<ul>
+<li><a href="#документація-по-роботі-з-magento-api">Документація по роботі з Magento API</a><ul>
+<li><a href="#авторизація">АВТОРИЗАЦІЯ</a><ul>
+<li><a href="#запит-на-отримання-токену">Запит на отримання токену</a><ul>
+<li><a href="#тип-запиту">Тип запиту</a></li>
+<li><a href="#url">URL</a></li>
+<li><a href="#заголовки-headers">Заголовки (Headers)</a></li>
+<li><a href="#тіло-запиту-request-body-приклад">Тіло запиту (Request body). Приклад.</a></li>
+<li><a href="#відповідь-response-приклад">Відповідь (Response). Приклад.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#робота-з-товарами">Робота з ТОВАРАМИ</a><ul>
+<li><a href="#отримання-інформації-про-товари">Отримання інформації про товари</a><ul>
+<li><a href="#тип-запиту-1">Тип запиту</a></li>
+<li><a href="#приклади-url">Приклади URL</a></li>
+<li><a href="#заголовки-headers-1">Заголовки (Headers)</a></li>
+<li><a href="#відповідь-response-приклад-1">Відповідь (Response). Приклад.</a></li>
+<li><a href="#відповідь-response-приклад-з-використанням-searchcriteria-параметру">Відповідь (Response). Приклад з використанням searchCriteria параметру.</a></li>
+</ul>
+</li>
+<li><a href="#зміна-інформації-про-товар">Зміна інформації про товар</a><ul>
+<li><a href="#тип-запиту-2">Тип запиту</a></li>
+<li><a href="#приклад-url">Приклад URL</a></li>
+<li><a href="#заголовки-headers-2">Заголовки (Headers)</a></li>
+<li><a href="#тіло-запиту-request-body-приклад-1">Тіло запиту (Request body). Приклад.</a></li>
+<li><a href="#відповідь-response-приклад-2">Відповідь (Response). Приклад.</a></li>
+</ul>
+</li>
+<li><a href="#створення-товару">Створення товару</a><ul>
+<li><a href="#тип-запиту-3">Тип запиту</a></li>
+<li><a href="#url-1">URL</a></li>
+<li><a href="#заголовки-headers-3">Заголовки (Headers)</a></li>
+<li><a href="#тіло-запиту-request-body-приклад-2">Тіло запиту (Request body). Приклад.</a></li>
+<li><a href="#відповідь-response-приклад-3">Відповідь (Response). Приклад.</a></li>
+</ul>
+</li>
+<li><a href="#видалення-товару">Видалення товару</a><ul>
+<li><a href="#тип-запиту-4">Тип запиту</a></li>
+<li><a href="#приклад-url-1">Приклад URL</a></li>
+<li><a href="#заголовки-headers-приклад">Заголовки (Headers). Приклад.</a></li>
+<li><a href="#відповідь-response">Відповідь (Response).</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#робота-з-користувачами">Робота з КОРИСТУВАЧАМИ</a><ul>
+<li><a href="#отримання-інформації-про-всіх-користувачів">Отримання інформації про всіх користувачів</a><ul>
+<li><a href="#тип-запиту-5">Тип запиту</a></li>
+<li><a href="#url-2">URL</a></li>
+<li><a href="#заголовки-headers-4">Заголовки (Headers)</a></li>
+<li><a href="#відповідь-response-приклад-4">Відповідь (Response). Приклад.</a></li>
+</ul>
+</li>
+<li><a href="#отримання-інформації-про-користувачів-запит-із-фільтрацією-searchcriteria">Отримання інформації про користувачів. Запит із фільтрацією (searchCriteria)</a><ul>
+<li><a href="#тип-запиту-6">Тип запиту</a></li>
+<li><a href="#приклад-url-отримання-інформації-по-користувачам-створеним-за-датою">Приклад URL (отримання інформації по користувачам створеним за датою)</a></li>
+<li><a href="#заголовки-headers-5">Заголовки (Headers)</a></li>
+<li><a href="#відповідь-response-на-запит-можливий-варіант-url-при-фільтрації-за-датою">Відповідь (Response) на запит  Можливий варіант URL при фільтрації за датою</a></li>
+</ul>
+</li>
+<li><a href="#зміна-інформації-про-користувача">Зміна інформації про користувача</a><ul>
+<li><a href="#тип-запиту-7">Тип запиту</a></li>
+<li><a href="#url-3">URL</a></li>
+<li><a href="#заголовки-headers-6">Заголовки (Headers)</a></li>
+<li><a href="#тіло-запиту-request-body-приклад-3">Тіло запиту (Request body). Приклад.</a></li>
+<li><a href="#відповідь-response-приклад-5">Відповідь (Response). Приклад.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#робота-з-категоріями">Робота з КАТЕГОРІЯМИ</a><ul>
+<li><a href="#отримання-інформації-про-категорії">Отримання інформації про категорії</a><ul>
+<li><a href="#тип-запиту-8">Тип запиту</a></li>
+<li><a href="#приклади-url-1">Приклади URL</a></li>
+<li><a href="#заголовки-headers-7">Заголовки (Headers)</a></li>
+<li><a href="#відповідь-response-приклад-6">Відповідь (Response). Приклад.</a></li>
+<li><a href="#відповідь-response-приклад-з-використанням-searchcriteria-параметру-1">Відповідь (Response). Приклад з використанням searchCriteria параметру.</a></li>
+</ul>
+</li>
+<li><a href="#створення-нової-категорії">Створення нової категорії</a><ul>
+<li><a href="#тип-запиту-9">Тип запиту</a></li>
+<li><a href="#url-4">URL</a></li>
+<li><a href="#заголовки-headers-8">Заголовки (Headers)</a></li>
+<li><a href="#тіло-запиту-request-body-приклад-4">Тіло запиту (Request body). Приклад.</a></li>
+<li><a href="#відповідь-response-приклад-7">Відповідь (Response). Приклад.</a></li>
+</ul>
+</li>
+<li><a href="#зміна-інформації-в-категорії">Зміна інформації в категорії</a><ul>
+<li><a href="#тип-запиту-10">Тип запиту</a></li>
+<li><a href="#приклад-url-2">Приклад URL</a></li>
+<li><a href="#заголовки-headers-9">Заголовки (Headers)</a></li>
+<li><a href="#тіло-запиту-request-body-приклад-5">Тіло запиту (Request body). Приклад.</a></li>
+<li><a href="#відповідь-response-приклад-8">Відповідь (Response). Приклад.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#робота-з-замовленнями">Робота з ЗАМОВЛЕННЯМИ</a><ul>
+<li><a href="#створення-нового-замовлення">Створення нового замовлення</a><ul>
+<li><a href="#тип-запиту-11">Тип запиту</a></li>
+<li><a href="#url-5">URL</a></li>
+<li><a href="#заголовки-headers-10">Заголовки (Headers)</a></li>
+<li><a href="#тіло-запиту-request-body-приклад-6">Тіло запиту (Request body). Приклад.</a></li>
+<li><a href="#відповідь-response-приклад-9">Відповідь (Response). Приклад.</a></li>
+</ul>
+</li>
+<li><a href="#отримання-інформації-про-всі-замовлення">Отримання інформації про всі замовлення</a><ul>
+<li><a href="#тип-запиту-12">Тип запиту</a></li>
+<li><a href="#url-6">URL</a></li>
+<li><a href="#заголовки-headers-11">Заголовки (Headers)</a></li>
+<li><a href="#відповідь-response-приклад-10">Відповідь (Response). Приклад.</a></li>
+</ul>
+</li>
+<li><a href="#отримання-інформації-про-замовлення-запит-із-фільтрацією-searchcriteria">Отримання інформації про замовлення. Запит із фільтрацією (searchCriteria)</a><ul>
+<li><a href="#тип-запиту-13">Тип запиту</a></li>
+<li><a href="#приклад-url-3">Приклад URL</a></li>
+<li><a href="#заголовки-headers-12">Заголовки (Headers)</a></li>
+<li><a href="#відповідь-response-приклад-11">Відповідь (Response). Приклад.</a></li>
+</ul>
+</li>
+<li><a href="#зміна-інформації-про-замовлення">Зміна інформації про замовлення</a><ul>
+<li><a href="#тип-запиту-14">Тип запиту</a></li>
+<li><a href="#url-7">URL</a></li>
+<li><a href="#заголовки-headers-13">Заголовки (Headers)</a></li>
+<li><a href="#тіло-запиту-request-body-приклад-7">Тіло запиту (Request body). Приклад.</a></li>
+<li><a href="#відповідь-response-приклад-12">Відповідь (Response). Приклад.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<h2 id="авторизація">АВТОРИЗАЦІЯ</h2>
+
+
+
+<h3 id="запит-на-отримання-токену">Запит на отримання токену</h3>
+
+
+
+<h4 id="тип-запиту">Тип запиту</h4>
+
+<blockquote>
+  <p><em>POST </em></p>
+</blockquote>
+
+
+
+<h4 id="url">URL</h4>
+
+<blockquote>
+  <p><a href="https://olimpvm.com.ua/index.php/rest/V1/integration/admin/token" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/integration/admin/token</a></p>
+</blockquote>
+
+
+
+<h4 id="заголовки-headers">Заголовки (Headers)</h4>
+
+<blockquote>
+  <p>Content-Type: application/json</p>
+</blockquote>
+
+
+
+<h4 id="тіло-запиту-request-body-приклад">Тіло запиту (Request body). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json"><div class="hljs-line">{
+</div><div class="hljs-line">    <span class="hljs-attr">"username"</span>:<span class="hljs-string">"1c"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"password"</span>:<span class="hljs-string">"yIkyCrfMCLczlu3"</span>
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<p><strong>В цьому прикладі:</strong></p>
+
+<ul><li><p><strong>username</strong> - ім’я користувача</p></li>
+<li><p><strong>password</strong> - пароль</p></li>
+</ul>
+
+
+
+<h4 id="відповідь-response-приклад">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-json hljs"><div class="hljs-line"><span class="hljs-string">"eyJraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM"</span>
+</div></code></pre>
+
+<p><strong>Відповідь</strong> прийде у виглаяді стрічки.</p>
+
+
+
+<h2 id="робота-з-товарами">Робота з ТОВАРАМИ</h2>
+
+
+
+<h3 id="отримання-інформації-про-товари">Отримання інформації про товари</h3>
+
+
+
+<h4 id="тип-запиту-1">Тип запиту</h4>
+
+<blockquote>
+  <p><em>GET</em></p>
+</blockquote>
+
+
+
+<h4 id="приклади-url">Приклади URL</h4>
+
+<blockquote>
+  <blockquote>
+    <p><a href="https://olimpvm.com.ua/index.php/rest/V1/products/sku" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/products/sku</a></p>
+  </blockquote>
+  
+  <p>В цьому прикладі замість <code>sku</code>  треба прописати реальне значення артикулу товару. Тобто, якщо атрикул товару <code>CO-00000553</code>, то запит треба робита на такий URL <code>https://olimpvm.com.ua/index.php/rest/V1/products/CO-00000553</code></p>
+  
+  <blockquote>
+    <p><a href="https://olimpvm.com.ua/index.php/rest/V1/products?searchCriteria[filter_groups][0][filters][0][field]=sku&amp;searchCriteria[filter_groups][0][filters][0][value]=MB001,MB002,MB003,MB004,MB005,MB006,MB007,MB008,MB009,MB010&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=in" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/products?searchCriteria[filter_groups][0][filters][0][field]=sku&amp;searchCriteria[filter_groups][0][filters][0][value]=MB001,MB002,MB003,MB004,MB005,MB006,MB007,MB008,MB009,MB010&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=in</a></p>
+  </blockquote>
+  
+  <p>Приклад, наведений вище, демонструє використання <code>searchCriteria</code> параметру. Завдяки цьому можна отримати інформацію одразу по декільком товарам за іхніми sku. В данному випадку ми отримаємо у відповідь json, що буде містити повну інформацію по кожнову товару з цими sku <code>MB001,MB002,MB003,MB004,MB005,MB006,MB007,MB008,MB009,MB010</code>. Відповідно, якщо замінити цей уривок запити на інші sku, наприклда, <code>MB011,MB012,MB013,MB014,MB015</code>, то отримаємо json з інофмаціє по ці товари.</p>
+</blockquote>
+
+
+
+<h4 id="заголовки-headers-1">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="відповідь-response-приклад-1">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"id"</span>: <span class="hljs-number">218</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"sku"</span>: <span class="hljs-string">"CO-00000553"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Шестерня Z12"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"attribute_set_id"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"price"</span>: <span class="hljs-number">2000</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"visibility"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"type_id"</span>: <span class="hljs-string">"simple"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-08 06:16:14"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-30 17:12:33"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"weight"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"website_ids"</span>: [
+</div><div class="hljs-line">      <span class="hljs-number">1</span>
+</div><div class="hljs-line">    ],
+</div><div class="hljs-line">    <span class="hljs-attr">"category_links"</span>: [
+</div><div class="hljs-line">      {
+</div><div class="hljs-line">        <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"category_id"</span>: <span class="hljs-string">"102"</span>
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    ],
+</div><div class="hljs-line">    <span class="hljs-attr">"stock_item"</span>: {
+</div><div class="hljs-line">      <span class="hljs-attr">"item_id"</span>: <span class="hljs-number">221</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"product_id"</span>: <span class="hljs-number">218</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"stock_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"qty"</span>: <span class="hljs-number">1000</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_in_stock"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_qty_decimal"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"show_default_notification_message"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_min_qty"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"min_qty"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_min_sale_qty"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"min_sale_qty"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_max_sale_qty"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"max_sale_qty"</span>: <span class="hljs-number">10000</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_backorders"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"backorders"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_notify_stock_qty"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"notify_stock_qty"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_qty_increments"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"qty_increments"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_enable_qty_inc"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"enable_qty_increments"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_manage_stock"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"manage_stock"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"low_stock_date"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_decimal_divided"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"stock_status_changed_auto"</span>: <span class="hljs-number">0</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-attr">"product_links"</span>: [],
+</div><div class="hljs-line">  <span class="hljs-attr">"options"</span>: [],
+</div><div class="hljs-line">  <span class="hljs-attr">"media_gallery_entries"</span>: [],
+</div><div class="hljs-line">  <span class="hljs-attr">"tier_prices"</span>: [],
+</div><div class="hljs-line">  <span class="hljs-attr">"custom_attributes"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"image"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    ...
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"has_options"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ]
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h4 id="відповідь-response-приклад-з-використанням-searchcriteria-параметру">Відповідь (Response). Приклад з використанням searchCriteria параметру.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json"><div class="hljs-line">{
+</div><div class="hljs-line">    <span class="hljs-attr">"items"</span>: [{
+</div><div class="hljs-line">            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"sku"</span>: <span class="hljs-string">"MB001"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Amcrest Security Camera"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"attribute_set_id"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"price"</span>: <span class="hljs-number">45.9</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"visibility"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"type_id"</span>: <span class="hljs-string">"simple"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2018-03-01 14:52:02"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-08 09:40:55"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"weight"</span>: <span class="hljs-number">200</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">                <span class="hljs-attr">"website_ids"</span>: [<span class="hljs-number">1</span>],
+</div><div class="hljs-line">                <span class="hljs-attr">"category_links"</span>: [{
+</div><div class="hljs-line">                        <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">                        <span class="hljs-attr">"category_id"</span>: <span class="hljs-string">"3"</span>
+</div><div class="hljs-line">                    }, {
+</div><div class="hljs-line">                        <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">                        <span class="hljs-attr">"category_id"</span>: <span class="hljs-string">"15"</span>
+</div><div class="hljs-line">                    }, {
+</div><div class="hljs-line">                        <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">                        <span class="hljs-attr">"category_id"</span>: <span class="hljs-string">"19"</span>
+</div><div class="hljs-line">                    }
+</div><div class="hljs-line">                ]
+</div><div class="hljs-line">            },
+</div><div class="hljs-line">            <span class="hljs-attr">"product_links"</span>: [{
+</div><div class="hljs-line">                    <span class="hljs-attr">"sku"</span>: <span class="hljs-string">"MB001"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"link_type"</span>: <span class="hljs-string">"related"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"linked_product_sku"</span>: <span class="hljs-string">"MB004"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"linked_product_type"</span>: <span class="hljs-string">"simple"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"position"</span>: <span class="hljs-number">1</span>
+</div><div class="hljs-line">                }, 
+</div><div class="hljs-line">                ...
+</div><div class="hljs-line">                {
+</div><div class="hljs-line">                    <span class="hljs-attr">"sku"</span>: <span class="hljs-string">"MB001"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"link_type"</span>: <span class="hljs-string">"crosssell"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"linked_product_sku"</span>: <span class="hljs-string">"MB018"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"linked_product_type"</span>: <span class="hljs-string">"simple"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"position"</span>: <span class="hljs-number">5</span>
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">            ],
+</div><div class="hljs-line">            <span class="hljs-attr">"options"</span>: [],
+</div><div class="hljs-line">            <span class="hljs-attr">"media_gallery_entries"</span>: [{
+</div><div class="hljs-line">                    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"media_type"</span>: <span class="hljs-string">"image"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"label"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"position"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"types"</span>: [<span class="hljs-string">"image"</span>, <span class="hljs-string">"small_image"</span>, <span class="hljs-string">"swatch_image"</span>],
+</div><div class="hljs-line">                    <span class="hljs-attr">"file"</span>: <span class="hljs-string">"\/\/2\/2\/22a.jpg"</span>
+</div><div class="hljs-line">                }, {
+</div><div class="hljs-line">                    <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"media_type"</span>: <span class="hljs-string">"image"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"label"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"position"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"types"</span>: [<span class="hljs-string">"thumbnail"</span>, <span class="hljs-string">"mb_hover_img"</span>],
+</div><div class="hljs-line">                    <span class="hljs-attr">"file"</span>: <span class="hljs-string">"\/\/2\/2\/22b.jpg"</span>
+</div><div class="hljs-line">                }, {
+</div><div class="hljs-line">                    <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"media_type"</span>: <span class="hljs-string">"image"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"label"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"position"</span>: <span class="hljs-number">3</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"types"</span>: [],
+</div><div class="hljs-line">                    <span class="hljs-attr">"file"</span>: <span class="hljs-string">"\/\/2\/2\/22c.jpg"</span>
+</div><div class="hljs-line">                }, {
+</div><div class="hljs-line">                    <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"media_type"</span>: <span class="hljs-string">"image"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"label"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"position"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"types"</span>: [],
+</div><div class="hljs-line">                    <span class="hljs-attr">"file"</span>: <span class="hljs-string">"\/\/2\/2\/22d.jpg"</span>
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">            ],
+</div><div class="hljs-line">            <span class="hljs-attr">"tier_prices"</span>: [],
+</div><div class="hljs-line">            <span class="hljs-attr">"custom_attributes"</span>: [{
+</div><div class="hljs-line">                    <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"manufacturer"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"value"</span>: <span class="hljs-string">"19"</span>
+</div><div class="hljs-line">                }, 
+</div><div class="hljs-line">                ...
+</div><div class="hljs-line">                {
+</div><div class="hljs-line">                    <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"has_options"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">            ]
+</div><div class="hljs-line">        }, 
+</div><div class="hljs-line">        ...
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">            <span class="hljs-attr">"id"</span>: <span class="hljs-number">10</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"sku"</span>: <span class="hljs-string">"MB010"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"iClever BoostCube Mini Charger"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"attribute_set_id"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"price"</span>: <span class="hljs-number">12</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"visibility"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"type_id"</span>: <span class="hljs-string">"simple"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2018-03-02 12:19:29"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-08 09:40:55"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"weight"</span>: <span class="hljs-number">50</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">                <span class="hljs-attr">"website_ids"</span>: [<span class="hljs-number">1</span>],
+</div><div class="hljs-line">                <span class="hljs-attr">"category_links"</span>: [{
+</div><div class="hljs-line">                        <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">                        <span class="hljs-attr">"category_id"</span>: <span class="hljs-string">"16"</span>
+</div><div class="hljs-line">                    }, {
+</div><div class="hljs-line">                        <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">                        <span class="hljs-attr">"category_id"</span>: <span class="hljs-string">"27"</span>
+</div><div class="hljs-line">                    }, {
+</div><div class="hljs-line">                        <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">                        <span class="hljs-attr">"category_id"</span>: <span class="hljs-string">"3"</span>
+</div><div class="hljs-line">                    }, {
+</div><div class="hljs-line">                        <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">                        <span class="hljs-attr">"category_id"</span>: <span class="hljs-string">"4"</span>
+</div><div class="hljs-line">                    }
+</div><div class="hljs-line">                ]
+</div><div class="hljs-line">            },
+</div><div class="hljs-line">            <span class="hljs-attr">"product_links"</span>: [],
+</div><div class="hljs-line">            <span class="hljs-attr">"options"</span>: [],
+</div><div class="hljs-line">            <span class="hljs-attr">"media_gallery_entries"</span>: [{
+</div><div class="hljs-line">                    <span class="hljs-attr">"id"</span>: <span class="hljs-number">40</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"media_type"</span>: <span class="hljs-string">"image"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"label"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"position"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"types"</span>: [<span class="hljs-string">"small_image"</span>, <span class="hljs-string">"thumbnail"</span>, <span class="hljs-string">"swatch_image"</span>],
+</div><div class="hljs-line">                    <span class="hljs-attr">"file"</span>: <span class="hljs-string">"\/\/4\/5\/45a.jpg"</span>
+</div><div class="hljs-line">                }, {
+</div><div class="hljs-line">                    <span class="hljs-attr">"id"</span>: <span class="hljs-number">41</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"media_type"</span>: <span class="hljs-string">"image"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"label"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"position"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"types"</span>: [<span class="hljs-string">"image"</span>, <span class="hljs-string">"mb_hover_img"</span>],
+</div><div class="hljs-line">                    <span class="hljs-attr">"file"</span>: <span class="hljs-string">"\/\/4\/5\/45b.jpg"</span>
+</div><div class="hljs-line">                }, {
+</div><div class="hljs-line">                    <span class="hljs-attr">"id"</span>: <span class="hljs-number">42</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"media_type"</span>: <span class="hljs-string">"image"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"label"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"position"</span>: <span class="hljs-number">3</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"types"</span>: [],
+</div><div class="hljs-line">                    <span class="hljs-attr">"file"</span>: <span class="hljs-string">"\/\/4\/5\/45c.jpg"</span>
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">            ],
+</div><div class="hljs-line">            <span class="hljs-attr">"tier_prices"</span>: [],
+</div><div class="hljs-line">            <span class="hljs-attr">"custom_attributes"</span>: [{
+</div><div class="hljs-line">                    <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"manufacturer"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"value"</span>: <span class="hljs-string">"17"</span>
+</div><div class="hljs-line">                }, 
+</div><div class="hljs-line">                ...
+</div><div class="hljs-line">                {
+</div><div class="hljs-line">                    <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"has_options"</span>,
+</div><div class="hljs-line">                    <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">            ]
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">    ],
+</div><div class="hljs-line">    <span class="hljs-attr">"search_criteria"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"filter_groups"</span>: [{
+</div><div class="hljs-line">                <span class="hljs-attr">"filters"</span>: [{
+</div><div class="hljs-line">                        <span class="hljs-attr">"field"</span>: <span class="hljs-string">"sku"</span>,
+</div><div class="hljs-line">                        <span class="hljs-attr">"value"</span>: <span class="hljs-string">"MB001,MB002,MB003,MB004,MB005,MB006,MB007,MB008,MB009,MB010"</span>,
+</div><div class="hljs-line">                        <span class="hljs-attr">"condition_type"</span>: <span class="hljs-string">"in"</span>
+</div><div class="hljs-line">                    }
+</div><div class="hljs-line">                ]
+</div><div class="hljs-line">            }
+</div><div class="hljs-line">        ]
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    <span class="hljs-attr">"total_count"</span>: <span class="hljs-number">10</span>
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h3 id="зміна-інформації-про-товар">Зміна інформації про товар</h3>
+
+
+
+<h4 id="тип-запиту-2">Тип запиту</h4>
+
+<blockquote>
+  <p><em>PUT</em></p>
+</blockquote>
+
+
+
+<h4 id="приклад-url">Приклад URL</h4>
+
+<blockquote>
+  <p>URL: <a href="https://olimpvm.com.ua/index.php/rest/V1/products/sku" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/products/sku</a></p>
+</blockquote>
+
+<p>В цьому приклді замість <code>sku</code>  треба прописати реальне значення артикулу товару. Тобто, якщо атрикул товару <code>CO-00000553</code>, то запит треба робита на такий URL <code>https://olimpvm.com.ua/index.php/rest/V1/products/CO-00000553</code></p>
+
+
+
+<h4 id="заголовки-headers-2">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="тіло-запиту-request-body-приклад-1">Тіло запиту (Request body). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"product"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"price"</span>: <span class="hljs-number">2000</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"custom_attributes"</span>: [
+</div><div class="hljs-line">      {
+</div><div class="hljs-line">        <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"special_price"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"value"</span>: <span class="hljs-string">"99.70"</span>
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    ],
+</div><div class="hljs-line">    <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">      <span class="hljs-attr">"stock_item"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"qty"</span>: <span class="hljs-number">1000</span>
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  }
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<p><strong>В цьому прикладі:</strong></p>
+
+<ul><li><p><strong>custom_attributes</strong></p></li>
+<li><p><strong>extension_attributes</strong> </p></li>
+</ul>
+
+
+
+<h4 id="відповідь-response-приклад-2">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-json hljs"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"id"</span>: <span class="hljs-number">218</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"sku"</span>: <span class="hljs-string">"CO-00000553"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Шестерня Z12"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"attribute_set_id"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"price"</span>: <span class="hljs-number">2000</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"visibility"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"type_id"</span>: <span class="hljs-string">"simple"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-08 06:16:14"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-30 17:12:33"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"weight"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"website_ids"</span>: [
+</div><div class="hljs-line">      <span class="hljs-number">1</span>
+</div><div class="hljs-line">    ],
+</div><div class="hljs-line">    <span class="hljs-attr">"category_links"</span>: [
+</div><div class="hljs-line">      {
+</div><div class="hljs-line">        <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"category_id"</span>: <span class="hljs-string">"102"</span>
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    ],
+</div><div class="hljs-line">    <span class="hljs-attr">"stock_item"</span>: {
+</div><div class="hljs-line">      <span class="hljs-attr">"item_id"</span>: <span class="hljs-number">221</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"product_id"</span>: <span class="hljs-number">218</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"stock_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"qty"</span>: <span class="hljs-number">1000</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_in_stock"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_qty_decimal"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"show_default_notification_message"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_min_qty"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"min_qty"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_min_sale_qty"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"min_sale_qty"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_max_sale_qty"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"max_sale_qty"</span>: <span class="hljs-number">10000</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_backorders"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"backorders"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_notify_stock_qty"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"notify_stock_qty"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_qty_increments"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"qty_increments"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_enable_qty_inc"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"enable_qty_increments"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_manage_stock"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"manage_stock"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"low_stock_date"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_decimal_divided"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"stock_status_changed_auto"</span>: <span class="hljs-number">0</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-attr">"product_links"</span>: [],
+</div><div class="hljs-line">  <span class="hljs-attr">"options"</span>: [],
+</div><div class="hljs-line">  <span class="hljs-attr">"media_gallery_entries"</span>: [],
+</div><div class="hljs-line">  <span class="hljs-attr">"tier_prices"</span>: [],
+</div><div class="hljs-line">  <span class="hljs-attr">"custom_attributes"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"image"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"url_key"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"shesternja-z12"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"special_price"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"99.700000"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"page_layout"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"small_image"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"special_from_date"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"2024-05-30 00:00:00"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"options_container"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"container2"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"color"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"56"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"thumbnail"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"size"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"22"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"unit"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"5485"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"tax_class_id"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"2"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"length"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"area"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"msrp_display_actual_price_type"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"amount"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"category_ids"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: [
+</div><div class="hljs-line">        <span class="hljs-string">"102"</span>
+</div><div class="hljs-line">      ]
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"required_options"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"has_options"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ]
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h3 id="створення-товару">Створення товару</h3>
+
+
+
+<h4 id="тип-запиту-3">Тип запиту</h4>
+
+<blockquote>
+  <p><em>POST</em></p>
+</blockquote>
+
+
+
+<h4 id="url-1">URL</h4>
+
+<blockquote>
+  <p>URL: <a href="https://olimpvm.com.ua/index.php/rest/V1/products" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/products</a></p>
+</blockquote>
+
+
+
+<h4 id="заголовки-headers-3">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="тіло-запиту-request-body-приклад-2">Тіло запиту (Request body). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json"><div class="hljs-line">{
+</div><div class="hljs-line">    <span class="hljs-attr">"product"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"sku"</span>: <span class="hljs-string">"test-sku"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"New Product Name"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"attribute_set_id"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"price"</span>: <span class="hljs-number">99.99</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"visibility"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"type_id"</span>: <span class="hljs-string">"simple"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"weight"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">            <span class="hljs-attr">"stock_item"</span>: {
+</div><div class="hljs-line">                <span class="hljs-attr">"qty"</span>: <span class="hljs-number">100</span>,
+</div><div class="hljs-line">                <span class="hljs-attr">"is_in_stock"</span>: <span class="hljs-literal">true</span>
+</div><div class="hljs-line">            }
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        <span class="hljs-attr">"custom_attributes"</span>: [
+</div><div class="hljs-line">            {
+</div><div class="hljs-line">                <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"description"</span>,
+</div><div class="hljs-line">                <span class="hljs-attr">"value"</span>: <span class="hljs-string">"New product description"</span>
+</div><div class="hljs-line">            },
+</div><div class="hljs-line">            {
+</div><div class="hljs-line">                <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"short_description"</span>,
+</div><div class="hljs-line">                <span class="hljs-attr">"value"</span>: <span class="hljs-string">"Short description of the new product"</span>
+</div><div class="hljs-line">            },
+</div><div class="hljs-line">            {
+</div><div class="hljs-line">                <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"unit"</span>,
+</div><div class="hljs-line">                <span class="hljs-attr">"value"</span>: <span class="hljs-number">5485</span>
+</div><div class="hljs-line">            }
+</div><div class="hljs-line">        ]
+</div><div class="hljs-line">    }    
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<p><strong>В цьому прикладі:</strong></p>
+
+<ul><li><p><strong>attribute_code: unit</strong> - обв’язковий артибут. Коди атрибутів: 5485 - шт, 5487 - рул,  5486 - банк,  5484 - Prevail</p></li>
+</ul>
+
+
+
+<h4 id="відповідь-response-приклад-3">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"id"</span>: <span class="hljs-number">222</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"sku"</span>: <span class="hljs-string">"test-sku-test"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"New Product Name"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"attribute_set_id"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"price"</span>: <span class="hljs-number">99.99</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"visibility"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"type_id"</span>: <span class="hljs-string">"simple"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-31 07:58:01"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-31 07:58:01"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"weight"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"website_ids"</span>: [
+</div><div class="hljs-line">      <span class="hljs-number">1</span>
+</div><div class="hljs-line">    ],
+</div><div class="hljs-line">    <span class="hljs-attr">"stock_item"</span>: {
+</div><div class="hljs-line">      <span class="hljs-attr">"item_id"</span>: <span class="hljs-number">460</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"product_id"</span>: <span class="hljs-number">222</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"stock_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"qty"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_in_stock"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_qty_decimal"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"show_default_notification_message"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_min_qty"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"min_qty"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_min_sale_qty"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"min_sale_qty"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_max_sale_qty"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"max_sale_qty"</span>: <span class="hljs-number">10000</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_backorders"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"backorders"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_notify_stock_qty"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"notify_stock_qty"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_qty_increments"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"qty_increments"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_enable_qty_inc"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"enable_qty_increments"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"use_config_manage_stock"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"manage_stock"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"low_stock_date"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_decimal_divided"</span>: <span class="hljs-literal">false</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"stock_status_changed_auto"</span>: <span class="hljs-number">0</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-attr">"options"</span>: [],
+</div><div class="hljs-line">  <span class="hljs-attr">"media_gallery_entries"</span>: [],
+</div><div class="hljs-line">  <span class="hljs-attr">"custom_attributes"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"short_description"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"Short description of the new product"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"url_key"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"new-product-name"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"description"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"New product description"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"options_container"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"container2"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"color"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"56"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"size"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"22"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"unit"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"5485"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"tax_class_id"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"2"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"msrp_display_actual_price_type"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"category_ids"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: []
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"required_options"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"has_options"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ]
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h3 id="видалення-товару">Видалення товару</h3>
+
+
+
+<h4 id="тип-запиту-4">Тип запиту</h4>
+
+<blockquote>
+  <p><em>DELETE</em></p>
+</blockquote>
+
+
+
+<h4 id="приклад-url-1">Приклад URL</h4>
+
+<blockquote>
+  <p>URL: <a href="https://olimpvm.com.ua/index.php/rest/V1/products/sku" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/products/sku</a></p>
+</blockquote>
+
+<p>В цьому приклді замість <code>sku</code>  треба прописати реальне значення артикулу товару. Тобто, якщо атрикул товару <code>CO-00000553</code>, то запит треба робита на такий URL <code>https://olimpvm.com.ua/index.php/rest/V1/products/CO-00000553</code></p>
+
+
+
+<h4 id="заголовки-headers-приклад">Заголовки (Headers). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="відповідь-response">Відповідь (Response).</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs actionscript"><div class="hljs-line"><span class="hljs-literal">true</span>
+</div></code></pre>
+
+
+
+<h2 id="робота-з-користувачами">Робота з КОРИСТУВАЧАМИ</h2>
+
+
+
+<h3 id="отримання-інформації-про-всіх-користувачів">Отримання інформації про всіх користувачів</h3>
+
+
+
+<h4 id="тип-запиту-5">Тип запиту</h4>
+
+<blockquote>
+  <p><em>GET</em></p>
+</blockquote>
+
+
+
+<h4 id="url-2">URL</h4>
+
+<blockquote>
+  <p><a href="https://olimpvm.com.ua/index.php/rest/V1/customers/search?searchCriteria=" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/customers/search?searchCriteria=</a></p>
+</blockquote>
+
+
+
+<h4 id="заголовки-headers-4">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="відповідь-response-приклад-4">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-json hljs"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"group_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"default_shipping"</span>: <span class="hljs-string">"1"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2018-03-04 12:40:42"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2021-02-26 19:28:26"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"created_in"</span>: <span class="hljs-string">"Default Store View"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"test@gmail.com"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"Jason"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Statham"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"store_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"website_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"addresses"</span>: [
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"customer_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"region"</span>: {
+</div><div class="hljs-line">            <span class="hljs-attr">"region_code"</span>: <span class="hljs-string">"CA"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"region"</span>: <span class="hljs-string">"California"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"region_id"</span>: <span class="hljs-number">12</span>
+</div><div class="hljs-line">          },
+</div><div class="hljs-line">          <span class="hljs-attr">"region_id"</span>: <span class="hljs-number">12</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"country_id"</span>: <span class="hljs-string">"US"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"street"</span>: [
+</div><div class="hljs-line">            <span class="hljs-string">"123 CS"</span>
+</div><div class="hljs-line">          ],
+</div><div class="hljs-line">          <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"12345"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"10000"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"city"</span>: <span class="hljs-string">"HN"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"Jason"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Statham"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"default_shipping"</span>: <span class="hljs-literal">true</span>
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">      ],
+</div><div class="hljs-line">      <span class="hljs-attr">"disable_auto_group_change"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"is_subscribed"</span>: <span class="hljs-literal">false</span>
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">      ...
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+</div><div class="hljs-line">      ...
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">      ...
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"id"</span>: <span class="hljs-number">5</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"group_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-31 11:52:57"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-31 11:52:58"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"created_in"</span>: <span class="hljs-string">"Українська"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"Kalakhan3000@gmail.com"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"Іван"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Калахан"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"store_id"</span>: <span class="hljs-number">6</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"website_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"addresses"</span>: [],
+</div><div class="hljs-line">      <span class="hljs-attr">"disable_auto_group_change"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"is_subscribed"</span>: <span class="hljs-literal">true</span>
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"id"</span>: <span class="hljs-number">6</span>,
+</div><div class="hljs-line">      ...
+</div><div class="hljs-line">      <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"is_subscribed"</span>: <span class="hljs-literal">true</span>
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ],
+</div><div class="hljs-line">  <span class="hljs-attr">"search_criteria"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"filter_groups"</span>: []
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-attr">"total_count"</span>: <span class="hljs-number">6</span>
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h3 id="отримання-інформації-про-користувачів-запит-із-фільтрацією-searchcriteria">Отримання інформації про користувачів. Запит із фільтрацією (searchCriteria)</h3>
+
+
+
+<h4 id="тип-запиту-6">Тип запиту</h4>
+
+<blockquote>
+  <p><em>GET</em></p>
+</blockquote>
+
+
+
+<h4 id="приклад-url-отримання-інформації-по-користувачам-створеним-за-датою">Приклад URL (отримання інформації по користувачам створеним за датою)</h4>
+
+<blockquote>
+  <p><a href="https://olimpvm.com.ua/index.php/rest/V1/customers/search?searchCriteria[filter_groups][0][filters][0][field]=created_at&amp;searchCriteria[filter_groups][0][filters][0][value]=2024-08-21%2000:00:00&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=gteq&amp;searchCriteria[filter_groups][0][filters][1][field]=created_at&amp;searchCriteria[filter_groups][0][filters][1][value]=2024-08-21%2023:59:59&amp;searchCriteria[filter_groups][0][filters][1][condition_type]=lteq" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/customers/search?searchCriteria[filter_groups][0][filters][0][field]=created_at&amp;searchCriteria[filter_groups][0][filters][0][value]=2024-08-21%2000:00:00&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=gteq&amp;searchCriteria[filter_groups][0][filters][1][field]=created_at&amp;searchCriteria[filter_groups][0][filters][1][value]=2024-08-21%2023:59:59&amp;searchCriteria[filter_groups][0][filters][1][condition_type]=lteq</a></p>
+</blockquote>
+
+<p><strong>Пояснення параметрів:</strong></p>
+
+<ul><li><p><strong>created_at</strong>:  Поле, за яким здійснюється фільтрація.</p></li>
+<li><p><strong>value</strong>:  Час початку і кінця дня.</p></li>
+<li><p><strong>condition_type</strong>:  Використовуються умови <code>gteq</code> (більше або дорівнює) та <code>lteq</code> (менше або дорівнює), щоб задати інтервал часу для фільтрації.</p></li>
+</ul>
+
+<p><strong>Можливий варіант URL при фільтрації за датою:</strong></p>
+
+<blockquote>
+  <p><a href="https://olimpvm.com.ua/index.php/rest/V1/customers/search?searchCriteria[filter_groups][0][filters][0][field]=created_at&amp;searchCriteria[filter_groups][0][filters][0][value]=2024-05-31%2000:00:00&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=gteq&amp;searchCriteria[filter_groups][1][filters][0][field]=created_at&amp;searchCriteria[filter_groups][1][filters][0][value]=2024-05-31%2023:59:59&amp;searchCriteria[filter_groups][1][filters][0][condition_type]=lteq" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/customers/search?searchCriteria[filter_groups][0][filters][0][field]=created_at&amp;searchCriteria[filter_groups][0][filters][0][value]=2024-05-31%2000:00:00&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=gteq&amp;searchCriteria[filter_groups][1][filters][0][field]=created_at&amp;searchCriteria[filter_groups][1][filters][0][value]=2024-05-31%2023:59:59&amp;searchCriteria[filter_groups][1][filters][0][condition_type]=lteq</a></p>
+</blockquote>
+
+<ul><li><p><em>Що змінилося:</em> <br>
+Кожен фільтр (<code>gteq</code> і <code>lteq</code>) тепер знаходиться в окремому <code>filter_groups</code>. Це гарантує, що Magento правильно обробить обидва фільтри.</p></li>
+<li><p><em>Як це працює:</em> <br>
+Перший фільтр у першому <code>filter_groups</code> шукає користувачів, створених після або рівно <code>2024-05-31 00:00:00</code>. <br>
+Другий фільтр у другому <code>filter_groups</code> шукає користувачів, створених до або рівно <code>2024-05-31 23:59:59</code>. <br>
+Це має повернути лише тих користувачів, які були створені саме 31 травня 2024 року.</p></li>
+</ul>
+
+<p><strong>Комбінування кількох фільтрів</strong> <br>
+Можна комбінувати кілька фільтрів, щоб відфільтрувати користувачів за кількома критеріями одночасно. Розглянемо на прикладі запиту, який поверне всіх користувачів, які зареєструвалися сьогодні та чиї email-адреси містять example.com.</p>
+
+<blockquote>
+  <p><a href="https://olimpvm.com.ua/index.php/rest/V1/customers/search?searchCriteria[filter_groups][0][filters][0][field]=email&amp;searchCriteria[filter_groups][0][filters][0][value]=%25example.com&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=like&amp;searchCriteria[filter_groups][1][filters][0][field]=created_at&amp;searchCriteria[filter_groups][1][filters][0][value]=2024-08-21%2000:00:00&amp;searchCriteria[filter_groups][1][filters][0][condition_type]=gteq" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/customers/search?searchCriteria[filter_groups][0][filters][0][field]=email&amp;searchCriteria[filter_groups][0][filters][0][value]=%25example.com&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=like&amp;searchCriteria[filter_groups][1][filters][0][field]=created_at&amp;searchCriteria[filter_groups][1][filters][0][value]=2024-08-21%2000:00:00&amp;searchCriteria[filter_groups][1][filters][0][condition_type]=gteq</a></p>
+</blockquote>
+
+<p><strong>Параметри <code>condition_type</code>:</strong></p>
+
+<ul><li><p><strong>eq</strong>:  Дорівнює</p></li>
+<li><p><strong>neq</strong>: Не дорівнює</p></li>
+<li><p><strong>like</strong>: Схоже</p></li>
+<li><p><strong>in</strong>: Включено в</p></li>
+<li><p><strong>nin</strong>: Не включено в</p></li>
+<li><p><strong>gteq</strong>: Більше або дорівнює</p></li>
+<li><p><strong>lteq</strong>: Менше або дорівнює</p></li>
+<li><p><strong>gt</strong>: Більше</p></li>
+<li><p><strong>lt</strong>: Менше</p></li>
+<li><p><strong>finset</strong>: У списку</p></li>
+<li><p><strong>from</strong>: З</p></li>
+<li><p><strong>to</strong>: До</p></li>
+</ul>
+
+
+
+<h4 id="заголовки-headers-5">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="відповідь-response-на-запит-можливий-варіант-url-при-фільтрації-за-датою">Відповідь (Response) на запит  <em>Можливий варіант URL при фільтрації за датою</em></h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-json hljs"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"id"</span>: <span class="hljs-number">5</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"group_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-31 11:52:57"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-31 11:52:58"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"created_in"</span>: <span class="hljs-string">"Українська"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"Kalakhan3000@gmail.com"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"Іван"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Калахан"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"store_id"</span>: <span class="hljs-number">6</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"website_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"addresses"</span>: [],
+</div><div class="hljs-line">      <span class="hljs-attr">"disable_auto_group_change"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"is_subscribed"</span>: <span class="hljs-literal">true</span>
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ],
+</div><div class="hljs-line">  <span class="hljs-attr">"search_criteria"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"filter_groups"</span>: [
+</div><div class="hljs-line">      {
+</div><div class="hljs-line">        <span class="hljs-attr">"filters"</span>: [
+</div><div class="hljs-line">          {
+</div><div class="hljs-line">            <span class="hljs-attr">"field"</span>: <span class="hljs-string">"created_at"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"value"</span>: <span class="hljs-string">"2024-05-31 00:00:00"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"condition_type"</span>: <span class="hljs-string">"gteq"</span>
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        ]
+</div><div class="hljs-line">      },
+</div><div class="hljs-line">      {
+</div><div class="hljs-line">        <span class="hljs-attr">"filters"</span>: [
+</div><div class="hljs-line">          {
+</div><div class="hljs-line">            <span class="hljs-attr">"field"</span>: <span class="hljs-string">"created_at"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"value"</span>: <span class="hljs-string">"2024-05-31 23:59:59"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"condition_type"</span>: <span class="hljs-string">"lteq"</span>
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        ]
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    ]
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-attr">"total_count"</span>: <span class="hljs-number">1</span>
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h3 id="зміна-інформації-про-користувача">Зміна інформації про користувача</h3>
+
+
+
+<h4 id="тип-запиту-7">Тип запиту</h4>
+
+<blockquote>
+  <p><em>POST</em></p>
+</blockquote>
+
+
+
+<h4 id="url-3">URL</h4>
+
+<blockquote>
+  <p><a href="https://olimpvm.com.ua/index.php/rest/V1/customers" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/customers</a></p>
+</blockquote>
+
+
+
+<h4 id="заголовки-headers-6">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="тіло-запиту-request-body-приклад-3">Тіло запиту (Request body). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-json hljs"><div class="hljs-line">  <span class="hljs-string">"customer"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"new-customer@example.com"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"John"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Doe"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"gender"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"website_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"group_id"</span>: <span class="hljs-number">3</span>, 
+</div><div class="hljs-line">    <span class="hljs-attr">"addresses"</span>: [
+</div><div class="hljs-line">      {
+</div><div class="hljs-line">        <span class="hljs-attr">"defaultShipping"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"defaultBilling"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"John"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Doe"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"region"</span>: {
+</div><div class="hljs-line">          <span class="hljs-attr">"regionCode"</span>: <span class="hljs-string">"CA"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"region"</span>: <span class="hljs-string">"California"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"regionId"</span>: <span class="hljs-number">12</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"90001"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"street"</span>: [<span class="hljs-string">"123 Main St"</span>],
+</div><div class="hljs-line">        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Los Angeles"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"555-555-5555"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"countryId"</span>: <span class="hljs-string">"US"</span>
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    ]
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-string">"password"</span>: <span class="hljs-string">"Password123"</span>
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<p><strong>В цьому прикладі:</strong></p>
+
+<ul><li><p><strong>group_id</strong> -тут якраз буде проставлятись знижка клієнта через ці групи (5%, 10%, 15%, 20%)”</p></li>
+</ul>
+
+
+
+<h4 id="відповідь-response-приклад-5">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-json hljs"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"group_id"</span>: <span class="hljs-number">3</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"default_billing"</span>: <span class="hljs-string">"4"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"default_shipping"</span>: <span class="hljs-string">"4"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-30 16:30:04"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-30 16:30:04"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"created_in"</span>: <span class="hljs-string">"Українська"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"email"</span>: <span class="hljs-string">"new-customer@example.com"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"John"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Doe"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"gender"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"store_id"</span>: <span class="hljs-number">6</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"website_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"addresses"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"customer_id"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"region"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"region_code"</span>: <span class="hljs-string">"CA"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"region"</span>: <span class="hljs-string">"California"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"region_id"</span>: <span class="hljs-number">12</span>
+</div><div class="hljs-line">      },
+</div><div class="hljs-line">      <span class="hljs-attr">"region_id"</span>: <span class="hljs-number">12</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"country_id"</span>: <span class="hljs-string">"US"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"street"</span>: [
+</div><div class="hljs-line">        <span class="hljs-string">"123 Main St"</span>
+</div><div class="hljs-line">      ],
+</div><div class="hljs-line">      <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"555-555-5555"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"90001"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Los Angeles"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"John"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Doe"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"default_shipping"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"default_billing"</span>: <span class="hljs-literal">true</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ],
+</div><div class="hljs-line">  <span class="hljs-attr">"disable_auto_group_change"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"is_subscribed"</span>: <span class="hljs-literal">false</span>
+</div><div class="hljs-line">  }
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h2 id="робота-з-категоріями">Робота з КАТЕГОРІЯМИ</h2>
+
+
+
+<h3 id="отримання-інформації-про-категорії">Отримання інформації про категорії</h3>
+
+
+
+<h4 id="тип-запиту-8">Тип запиту</h4>
+
+<blockquote>
+  <p><em>GET</em></p>
+</blockquote>
+
+
+
+<h4 id="приклади-url-1">Приклади URL</h4>
+
+<blockquote>
+  <blockquote>
+    <p><a href="https://olimpvm.com.ua/index.php/rest/V1/categories/category_id" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/categories/category_id</a></p>
+  </blockquote>
+  
+  <p>В цьому приклді замість <code>category_id</code>  треба прописати реальне значення артикулу товару. Тобто, якщо атрикул товару <code>184</code>, то запит треба робита на такий URL <code>https://olimpvm.com.ua/index.php/rest/V1/categories/184</code></p>
+  
+  <blockquote>
+    <p><a href="https://olimpvm.com.ua/index.php/rest/V1/categories/list?searchCriteria[filterGroups][0][filters][0][field]=entity_id&amp;searchCriteria[filterGroups][0][filters][0][value]=184,77,78&amp;searchCriteria[filterGroups][0][filters][0][conditionType]=in" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/categories/list?searchCriteria[filterGroups][0][filters][0][field]=entity_id&amp;searchCriteria[filterGroups][0][filters][0][value]=184,77,78&amp;searchCriteria[filterGroups][0][filters][0][conditionType]=in</a></p>
+  </blockquote>
+  
+  <p>Приклад, наведений вище, демонструє використання <code>searchCriteria</code> параметру. Завдяки цьому можна отримати інформацію одразу по декільком категоріям за іхніми id. В данному випадку ми отримаємо у відповідь json, що буде містити повну інформацію по кожній категорії з цими id<code>184,77,78</code>. Відповідно, якщо замінити цей уривок запити на інші id, наприклда, <code>100,101,102</code>, то отримаємо json з інофмаціє по ці категорії.</p>
+</blockquote>
+
+
+
+<h4 id="заголовки-headers-7">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="відповідь-response-приклад-6">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"id"</span>: <span class="hljs-number">184</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Нова назва категорії"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"is_active"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"level"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"children"</span>: <span class="hljs-string">""</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-31 08:17:34"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-31 09:09:47"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"path"</span>: <span class="hljs-string">"1/2/184"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"include_in_menu"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"custom_attributes"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"children_count"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"is_anchor"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"1"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"path"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"1/2/184"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"url_key"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"nova-kategorija"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"url_path"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"nova-kategorija"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"use_name_in_product_search"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"1"</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ]
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h4 id="відповідь-response-приклад-з-використанням-searchcriteria-параметру-1">Відповідь (Response). Приклад з використанням searchCriteria параметру.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs clojure"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-string">"items"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-string">"id"</span>: <span class="hljs-number">77</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"parent_id"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Бетонозмішувачі"</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"is_active"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"position"</span>: <span class="hljs-number">18</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"level"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"children"</span>: <span class="hljs-string">"101,102"</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"created_at"</span>: <span class="hljs-string">"2024-04-26 08:45:31"</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"updated_at"</span>: <span class="hljs-string">"2024-04-26 09:02:07"</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"path"</span>: <span class="hljs-string">"1/2/77"</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"include_in_menu"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"custom_attributes"</span>: [
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"children_count"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"2"</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"custom_apply_to_products"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"custom_use_parent_settings"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"display_mode"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"PRODUCTS"</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"is_anchor"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"1"</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"page_layout"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"category-full-width"</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"path"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"1/2/77"</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"smartmenu_cat_position"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"left"</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"smartmenu_cat_style"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"dropdown_simple"</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"smartmenu_show_on_cat"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"1"</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"url_key"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"betonozmishuvachi"</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"url_path"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"betonozmishuvachi"</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-string">"attribute_code"</span>: <span class="hljs-string">"use_name_in_product_search"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"value"</span>: <span class="hljs-string">"1"</span>
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">      ]
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-string">"id"</span>: <span class="hljs-number">78</span>,
+</div><div class="hljs-line">      ...
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-string">"id"</span>: <span class="hljs-number">184</span>,
+</div><div class="hljs-line">      ...
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ],
+</div><div class="hljs-line">  <span class="hljs-string">"search_criteria"</span>: {
+</div><div class="hljs-line">    <span class="hljs-string">"filter_groups"</span>: [
+</div><div class="hljs-line">      {
+</div><div class="hljs-line">        <span class="hljs-string">"filters"</span>: [
+</div><div class="hljs-line">          {
+</div><div class="hljs-line">            <span class="hljs-string">"field"</span>: <span class="hljs-string">"entity_id"</span>,
+</div><div class="hljs-line">            <span class="hljs-string">"value"</span>: <span class="hljs-string">"184,77,78"</span>,
+</div><div class="hljs-line">            <span class="hljs-string">"condition_type"</span>: <span class="hljs-string">"in"</span>
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        ]
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    ]
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-string">"total_count"</span>: <span class="hljs-number">3</span>
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h3 id="створення-нової-категорії">Створення нової категорії</h3>
+
+
+
+<h4 id="тип-запиту-9">Тип запиту</h4>
+
+<blockquote>
+  <p><em>POST </em></p>
+</blockquote>
+
+
+
+<h4 id="url-4">URL</h4>
+
+<blockquote>
+  <p><a href="https://olimpvm.com.ua/index.php/rest/V1/categories" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/categories</a></p>
+</blockquote>
+
+
+
+<h4 id="заголовки-headers-8">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="тіло-запиту-request-body-приклад-4">Тіло запиту (Request body). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json"><div class="hljs-line">{
+</div><div class="hljs-line">    <span class="hljs-attr">"category"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Нова категорія"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"is_active"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"include_in_menu"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"extension_attributes"</span>: []
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h4 id="відповідь-response-приклад-7">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"id"</span>: <span class="hljs-number">184</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Нова категорія"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"is_active"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"level"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"children"</span>: <span class="hljs-string">""</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-31 08:17:34"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-31 08:17:34"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"path"</span>: <span class="hljs-string">"1/2/184"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"include_in_menu"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"custom_attributes"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"children_count"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"is_anchor"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"1"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"path"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"1/2/184"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"url_key"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"nova-kategorija"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"url_path"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"nova-kategorija"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"use_name_in_product_search"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"1"</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ]
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h3 id="зміна-інформації-в-категорії">Зміна інформації в категорії</h3>
+
+
+
+<h4 id="тип-запиту-10">Тип запиту</h4>
+
+<blockquote>
+  <p><em>PUT</em></p>
+</blockquote>
+
+
+
+<h4 id="приклад-url-2">Приклад URL</h4>
+
+<blockquote>
+  <p><a href="https://olimpvm.com.ua/index.php/rest/V1/categories/category_id" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/categories/category_id</a></p>
+</blockquote>
+
+<p>В цьому приклді замість <code>category_id</code>  треба прописати реальне значення артикулу товару. Тобто, якщо атрикул товару <code>184</code>, то запит треба робита на такий URL <code>https://olimpvm.com.ua/index.php/rest/V1/categories/184</code></p>
+
+
+
+<h4 id="заголовки-headers-9">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+
+
+<h4 id="тіло-запиту-request-body-приклад-5">Тіло запиту (Request body). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"category"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Нова назва категорії"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"is_active"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"level"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"path"</span>: <span class="hljs-string">"string"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"include_in_menu"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"extension_attributes"</span>: {}
+</div><div class="hljs-line">  }
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h4 id="відповідь-response-приклад-8">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"id"</span>: <span class="hljs-number">184</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Нова назва категорії"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"is_active"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"level"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"children"</span>: <span class="hljs-string">""</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-31 08:17:34"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-31 09:09:47"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"path"</span>: <span class="hljs-string">"1/2/184"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"include_in_menu"</span>: <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"custom_attributes"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"children_count"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"is_anchor"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"1"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"path"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"1/2/184"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"url_key"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"nova-kategorija"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"url_path"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"nova-kategorija"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"attribute_code"</span>: <span class="hljs-string">"use_name_in_product_search"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"value"</span>: <span class="hljs-string">"1"</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ]
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h2 id="робота-з-замовленнями">Робота з ЗАМОВЛЕННЯМИ</h2>
+
+
+
+<h3 id="створення-нового-замовлення">Створення нового замовлення</h3>
+
+
+
+<h4 id="тип-запиту-11">Тип запиту</h4>
+
+<blockquote>
+  <p><em>POST</em></p>
+</blockquote>
+
+
+
+<h4 id="url-5">URL</h4>
+
+<blockquote>
+  <p><a href="https://olimpvm.com.ua/index.php/rest/V1/orders" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/orders</a></p>
+</blockquote>
+
+
+
+<h4 id="заголовки-headers-10">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="тіло-запиту-request-body-приклад-6">Тіло запиту (Request body). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-json hljs"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"entity"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"base_currency_code"</span>: <span class="hljs-string">"USD"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"customer_email"</span>: <span class="hljs-string">"customer@example.com"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"customer_firstname"</span>: <span class="hljs-string">"John"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"customer_lastname"</span>: <span class="hljs-string">"Doe"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"billing_address"</span>: {
+</div><div class="hljs-line">      <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"John"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Doe"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"street"</span>: [<span class="hljs-string">"123 Main St"</span>],
+</div><div class="hljs-line">      <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Los Angeles"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"90001"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"1234567890"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"country_id"</span>: <span class="hljs-string">"US"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">      {
+</div><div class="hljs-line">        <span class="hljs-attr">"product_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"sku"</span>: <span class="hljs-string">"product_sku"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"qty_ordered"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"price"</span>: <span class="hljs-number">100</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"base_price"</span>: <span class="hljs-number">100</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"row_total"</span>: <span class="hljs-number">200</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"base_row_total"</span>: <span class="hljs-number">200</span>
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    ],
+</div><div class="hljs-line">    <span class="hljs-attr">"payment"</span>: {
+</div><div class="hljs-line">      <span class="hljs-attr">"method"</span>: <span class="hljs-string">"checkmo"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"pending"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"store_id"</span>: <span class="hljs-number">1</span>
+</div><div class="hljs-line">  }
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<p><strong>Деякі поля для запиту (пояснення):</strong></p>
+
+<ul><li><p><strong>customer_email</strong>: Електронна пошта клієнта.</p></li>
+<li><p><strong>customer_firstname</strong>, <strong>customer_lastname</strong>: Ім’я та прізвище клієнта.</p></li>
+<li><p><strong>billing_address</strong>: Адреса для виставлення рахунку.</p></li>
+<li><p><strong>items</strong>: Список товарів, де кожен товар представлений такими полями, як <code>product_id</code>, <code>sku</code>, <code>qty_ordered</code>, <code>price</code>.</p></li>
+<li><p><strong>payment</strong>: Спосіб оплати (наприклад, <code>checkmo</code> для оплати чеком).</p></li>
+<li><p><strong>status</strong>: Статус замовлення (наприклад, <code>pending</code>).</p></li>
+<li><p><strong>store_id</strong>: Ідентифікатор магазину.</p></li>
+</ul>
+
+
+
+<h4 id="відповідь-response-приклад-9">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-json hljs"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"base_currency_code"</span>: <span class="hljs-string">"USD"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"base_grand_total"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"base_total_due"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"billing_address_id"</span>: <span class="hljs-number">25</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-08-14 13:06:19"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"customer_email"</span>: <span class="hljs-string">"customer@example.com"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"customer_firstname"</span>: <span class="hljs-string">"John"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"customer_lastname"</span>: <span class="hljs-string">"Doe"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"entity_id"</span>: <span class="hljs-number">13</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"grand_total"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"increment_id"</span>: <span class="hljs-string">"000000010"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"protect_code"</span>: <span class="hljs-string">"2af1c004274ed8dc7b4a7ebc83af6d42"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"pending"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"store_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"store_name"</span>: <span class="hljs-string">"Main Website\nMain Website Store\nEnglish"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"total_due"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"total_item_count"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-08-14 13:06:19"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"base_price"</span>: <span class="hljs-number">100</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_row_total"</span>: <span class="hljs-number">200</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-08-14 13:06:19"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"item_id"</span>: <span class="hljs-number">30</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"order_id"</span>: <span class="hljs-number">13</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"original_price"</span>: <span class="hljs-number">100</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"price"</span>: <span class="hljs-number">100</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"product_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"qty_ordered"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"row_total"</span>: <span class="hljs-number">200</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"sku"</span>: <span class="hljs-string">"product_sku"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-08-14 13:06:19"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"row_total_incl_tax"</span>: <span class="hljs-number">200</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_row_total_incl_tax"</span>: <span class="hljs-number">200</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ],
+</div><div class="hljs-line">  <span class="hljs-attr">"billing_address"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"address_type"</span>: <span class="hljs-string">"billing"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Los Angeles"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"country_id"</span>: <span class="hljs-string">"US"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"customer@example.com"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"entity_id"</span>: <span class="hljs-number">25</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"John"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Doe"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">13</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"90001"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"street"</span>: [
+</div><div class="hljs-line">      <span class="hljs-string">"123 Main St"</span>
+</div><div class="hljs-line">    ],
+</div><div class="hljs-line">    <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"1234567890"</span>
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-attr">"payment"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"account_status"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"additional_information"</span>: [],
+</div><div class="hljs-line">    <span class="hljs-attr">"cc_last4"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"entity_id"</span>: <span class="hljs-number">13</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"checkmo"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">13</span>
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-attr">"status_histories"</span>: []
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h3 id="отримання-інформації-про-всі-замовлення">Отримання інформації про всі замовлення</h3>
+
+
+
+<h4 id="тип-запиту-12">Тип запиту</h4>
+
+<blockquote>
+  <p><em>GET</em></p>
+</blockquote>
+
+
+
+<h4 id="url-6">URL</h4>
+
+<blockquote>
+  <p><a href="https://olimpvm.com.ua/index.php/rest/V1/orders?searchCriteria=" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/orders?searchCriteria=</a></p>
+</blockquote>
+
+
+
+<h4 id="заголовки-headers-11">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="відповідь-response-приклад-10">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-json hljs"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"base_currency_code"</span>: <span class="hljs-string">"USD"</span>,
+</div><div class="hljs-line">      ...
+</div><div class="hljs-line">      <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-31 13:02:19"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"weight"</span>: <span class="hljs-number">5000</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-attr">"amount_refunded"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">          ...
+</div><div class="hljs-line">          <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-31 12:56:43"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"weee_tax_applied"</span>: <span class="hljs-string">"[]"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"product_option"</span>: {
+</div><div class="hljs-line">            <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">              <span class="hljs-attr">"downloadable_option"</span>: {
+</div><div class="hljs-line">                <span class="hljs-attr">"downloadable_links"</span>: [
+</div><div class="hljs-line">                  <span class="hljs-number">1</span>,
+</div><div class="hljs-line">                  <span class="hljs-number">2</span>
+</div><div class="hljs-line">                ]
+</div><div class="hljs-line">              }
+</div><div class="hljs-line">            }
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-attr">"amount_refunded"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">          ...
+</div><div class="hljs-line">          <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2018-04-07 00:42:59"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"weee_tax_applied"</span>: <span class="hljs-string">"[]"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"weight"</span>: <span class="hljs-number">1000</span>
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">      ],
+</div><div class="hljs-line">      <span class="hljs-attr">"billing_address"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"address_type"</span>: <span class="hljs-string">"billing"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"HN"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"country_id"</span>: <span class="hljs-string">"US"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"test@gmail.com"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"entity_id"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"Jason"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Statham"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"10000"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"region"</span>: <span class="hljs-string">"California"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"region_code"</span>: <span class="hljs-string">"CA"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"region_id"</span>: <span class="hljs-number">12</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"street"</span>: [
+</div><div class="hljs-line">          <span class="hljs-string">"123 CS"</span>
+</div><div class="hljs-line">        ],
+</div><div class="hljs-line">        <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"12345"</span>
+</div><div class="hljs-line">      },
+</div><div class="hljs-line">      <span class="hljs-attr">"payment"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"account_status"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"additional_information"</span>: [
+</div><div class="hljs-line">          <span class="hljs-string">"Check / Money order"</span>
+</div><div class="hljs-line">        ],
+</div><div class="hljs-line">        <span class="hljs-attr">"amount_ordered"</span>: <span class="hljs-number">5060</span>,
+</div><div class="hljs-line">        ...
+</div><div class="hljs-line">        <span class="hljs-attr">"shipping_captured"</span>: <span class="hljs-number">25</span>
+</div><div class="hljs-line">      },
+</div><div class="hljs-line">      <span class="hljs-attr">"status_histories"</span>: [],
+</div><div class="hljs-line">      <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"shipping_assignments"</span>: [
+</div><div class="hljs-line">          {
+</div><div class="hljs-line">            <span class="hljs-attr">"shipping"</span>: {
+</div><div class="hljs-line">              <span class="hljs-attr">"address"</span>: {
+</div><div class="hljs-line">                <span class="hljs-attr">"address_type"</span>: <span class="hljs-string">"shipping"</span>,
+</div><div class="hljs-line">                ...
+</div><div class="hljs-line">                <span class="hljs-attr">"street"</span>: [
+</div><div class="hljs-line">                  <span class="hljs-string">"123 CS"</span>
+</div><div class="hljs-line">                ],
+</div><div class="hljs-line">                <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"12345"</span>
+</div><div class="hljs-line">              },
+</div><div class="hljs-line">              <span class="hljs-attr">"total"</span>: {
+</div><div class="hljs-line">                <span class="hljs-attr">"base_shipping_amount"</span>: <span class="hljs-number">25</span>,
+</div><div class="hljs-line">                ...
+</div><div class="hljs-line">                <span class="hljs-attr">"shipping_tax_amount"</span>: <span class="hljs-number">0</span>
+</div><div class="hljs-line">              }
+</div><div class="hljs-line">            },
+</div><div class="hljs-line">            <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">              {
+</div><div class="hljs-line">                <span class="hljs-attr">"amount_refunded"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">                ...
+</div><div class="hljs-line">                <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-31 12:56:43"</span>,
+</div><div class="hljs-line">                <span class="hljs-attr">"weee_tax_applied"</span>: <span class="hljs-string">"[]"</span>,
+</div><div class="hljs-line">                <span class="hljs-attr">"product_option"</span>: {
+</div><div class="hljs-line">                  <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">                    <span class="hljs-attr">"downloadable_option"</span>: {
+</div><div class="hljs-line">                      <span class="hljs-attr">"downloadable_links"</span>: [
+</div><div class="hljs-line">                        <span class="hljs-number">1</span>,
+</div><div class="hljs-line">                        <span class="hljs-number">2</span>
+</div><div class="hljs-line">                      ]
+</div><div class="hljs-line">                    }
+</div><div class="hljs-line">                  }
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">              },
+</div><div class="hljs-line">              {
+</div><div class="hljs-line">                <span class="hljs-attr">"amount_refunded"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">                   ...
+</div><div class="hljs-line">                <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2018-04-07 00:42:59"</span>,
+</div><div class="hljs-line">                <span class="hljs-attr">"weee_tax_applied"</span>: <span class="hljs-string">"[]"</span>,
+</div><div class="hljs-line">                <span class="hljs-attr">"weight"</span>: <span class="hljs-number">1000</span>
+</div><div class="hljs-line">              }
+</div><div class="hljs-line">            ]
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        ],
+</div><div class="hljs-line">        <span class="hljs-attr">"payment_additional_info"</span>: [
+</div><div class="hljs-line">          {
+</div><div class="hljs-line">            <span class="hljs-attr">"key"</span>: <span class="hljs-string">"method_title"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"value"</span>: <span class="hljs-string">"Check / Money order"</span>
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        ],
+</div><div class="hljs-line">        <span class="hljs-attr">"applied_taxes"</span>: [],
+</div><div class="hljs-line">        <span class="hljs-attr">"item_applied_taxes"</span>: []
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">    ...
+</div><div class="hljs-line">    ]
+</div><div class="hljs-line"> }
+</div></code></pre>
+
+
+
+<h3 id="отримання-інформації-про-замовлення-запит-із-фільтрацією-searchcriteria">Отримання інформації про замовлення. Запит із фільтрацією (searchCriteria)</h3>
+
+
+
+<h4 id="тип-запиту-13">Тип запиту</h4>
+
+<blockquote>
+  <p><em>GET</em></p>
+</blockquote>
+
+
+
+<h4 id="приклад-url-3">Приклад URL</h4>
+
+<blockquote>
+  <p><a href="https://olimpvm.com.ua/index.php/rest/V1/orders?searchCriteria[filterGroups][0][filters][0][field]=created_at&amp;searchCriteria[filterGroups][0][filters][0][value]=2024-06-28&amp;searchCriteria[filterGroups][0][filters][0][condition_type]=gt" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/orders?searchCriteria[filterGroups][0][filters][0][field]=created_at&amp;searchCriteria[filterGroups][0][filters][0][value]=2024-06-28&amp;searchCriteria[filterGroups][0][filters][0][condition_type]=gt</a></p>
+</blockquote>
+
+<p><strong>Опис структури searchCriteria:</strong></p>
+
+<ul><li><p><strong>searchCriteria[filterGroups][0][filters][0][field]</strong>: Поле для фільтрації (наприклад, <code>created_at</code> для фільтрації за датою створення,<code>status</code> для фільтрації за статусом замовлення).</p></li>
+<li><p><strong>searchCriteria[filterGroups][0][filters][0][value]</strong>: Значення для фільтрації (наприклад, дата <code>2024-06-28</code>, якщо фільтруємо за датою створення).</p></li>
+<li><p><strong>searchCriteria[filterGroups][0][filters][0][condition_type]</strong>: Тип умови для фільтрації. Деякі типи умов:</p>
+
+<ul>
+<li><p><strong>gt</strong> — більше ніж (наприклад, дати, пізніші за 2024-06-28),</p></li>
+<li><p><strong>lt</strong> — менше ніж,</p></li>
+<li><p><strong>eq</strong> — точна відповідність (рівність),</p></li>
+<li><p><strong>like</strong> — часткове співпадіння (можна використовувати для пошуку за частинами тексту).</p></li></ul></li>
+</ul>
+
+
+
+<h4 id="заголовки-headers-12">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="відповідь-response-приклад-11">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-json hljs"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"base_currency_code"</span>: <span class="hljs-string">"UAH"</span>,
+</div><div class="hljs-line">     ...
+</div><div class="hljs-line">      <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-06-28 06:32:38"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"weight"</span>: <span class="hljs-number">0.9</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-attr">"amount_refunded"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">          ...
+</div><div class="hljs-line">          <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-06-28 06:32:37"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"weight"</span>: <span class="hljs-number">0.9</span>
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">      ],
+</div><div class="hljs-line">      <span class="hljs-attr">"billing_address"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"address_type"</span>: <span class="hljs-string">"billing"</span>,
+</div><div class="hljs-line">        ...
+</div><div class="hljs-line">        <span class="hljs-attr">"region_code"</span>: <span class="hljs-string">"Тест"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"street"</span>: [
+</div><div class="hljs-line">          <span class="hljs-string">"Поштомат \"Нова Пошта\" №36321: пров. Чугуївський, 19а (маг. Еко-маркет)"</span>
+</div><div class="hljs-line">        ],
+</div><div class="hljs-line">        <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"099 999 99 99"</span>
+</div><div class="hljs-line">      },
+</div><div class="hljs-line">      <span class="hljs-attr">"payment"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"account_status"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"additional_information"</span>: [
+</div><div class="hljs-line">          <span class="hljs-string">"Безготівкова для фізичних осіб"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"оплата на розрахунковий рахунок"</span>
+</div><div class="hljs-line">        ],
+</div><div class="hljs-line">        <span class="hljs-attr">"amount_ordered"</span>: <span class="hljs-number">167.7</span>,
+</div><div class="hljs-line">        ...
+</div><div class="hljs-line">        <span class="hljs-attr">"shipping_amount"</span>: <span class="hljs-number">0</span>
+</div><div class="hljs-line">      },
+</div><div class="hljs-line">      <span class="hljs-attr">"status_histories"</span>: [
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"Тест Тестовий: "</span>,
+</div><div class="hljs-line">          ...
+</div><div class="hljs-line">          <span class="hljs-attr">"status"</span>: <span class="hljs-string">"pending"</span>
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">      ],
+</div><div class="hljs-line">      <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"shipping_assignments"</span>: [
+</div><div class="hljs-line">          {
+</div><div class="hljs-line">            <span class="hljs-attr">"shipping"</span>: {
+</div><div class="hljs-line">              <span class="hljs-attr">"address"</span>: {
+</div><div class="hljs-line">                <span class="hljs-attr">"address_type"</span>: <span class="hljs-string">"shipping"</span>,
+</div><div class="hljs-line">                ...
+</div><div class="hljs-line">                <span class="hljs-attr">"region_code"</span>: <span class="hljs-string">"Тест"</span>,
+</div><div class="hljs-line">                <span class="hljs-attr">"street"</span>: [
+</div><div class="hljs-line">                  <span class="hljs-string">"Поштомат \"Нова Пошта\" №36321: пров. Чугуївський, 19а (маг. Еко-маркет)"</span>
+</div><div class="hljs-line">                ],
+</div><div class="hljs-line">                <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"099 999 99 99"</span>
+</div><div class="hljs-line">              },
+</div><div class="hljs-line">              <span class="hljs-attr">"method"</span>: <span class="hljs-string">"novaposhta_novaposhta_to_warehouse"</span>,
+</div><div class="hljs-line">              <span class="hljs-attr">"total"</span>: {
+</div><div class="hljs-line">                <span class="hljs-attr">"base_shipping_amount"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">                ...
+</div><div class="hljs-line">                <span class="hljs-attr">"shipping_tax_amount"</span>: <span class="hljs-number">0</span>
+</div><div class="hljs-line">              }
+</div><div class="hljs-line">            },
+</div><div class="hljs-line">            <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">              {
+</div><div class="hljs-line">                <span class="hljs-attr">"amount_refunded"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">               ...
+</div><div class="hljs-line">                <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-06-28 06:32:37"</span>,
+</div><div class="hljs-line">                <span class="hljs-attr">"weight"</span>: <span class="hljs-number">0.9</span>
+</div><div class="hljs-line">              }
+</div><div class="hljs-line">            ]
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        ],
+</div><div class="hljs-line">        <span class="hljs-attr">"payment_additional_info"</span>: [
+</div><div class="hljs-line">          {
+</div><div class="hljs-line">            <span class="hljs-attr">"key"</span>: <span class="hljs-string">"method_title"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"value"</span>: <span class="hljs-string">"Безготівкова для фізичних осіб"</span>
+</div><div class="hljs-line">          },
+</div><div class="hljs-line">          {
+</div><div class="hljs-line">            <span class="hljs-attr">"key"</span>: <span class="hljs-string">"instructions"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"value"</span>: <span class="hljs-string">"оплата на розрахунковий рахунок"</span>
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        ],
+</div><div class="hljs-line">        <span class="hljs-attr">"applied_taxes"</span>: [],
+</div><div class="hljs-line">        <span class="hljs-attr">"item_applied_taxes"</span>: []
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"base_currency_code"</span>: <span class="hljs-string">"UAH"</span>,
+</div><div class="hljs-line">      ...
+</div><div class="hljs-line">      <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-06-28 06:36:39"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"weight"</span>: <span class="hljs-number">1.8</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-attr">"amount_refunded"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">          ...
+</div><div class="hljs-line">          <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-06-28 06:36:39"</span>,
+</div><div class="hljs-line">          <span class="hljs-attr">"weight"</span>: <span class="hljs-number">1.8</span>
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">      ],
+</div><div class="hljs-line">      <span class="hljs-attr">"billing_address"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"address_type"</span>: <span class="hljs-string">"billing"</span>,
+</div><div class="hljs-line">        ...
+</div><div class="hljs-line">        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"11112"</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"street"</span>: [
+</div><div class="hljs-line">          <span class="hljs-string">"Поштомат \"Нова Пошта\" №36321: пров. Чугуївський, 19а (маг. Еко-маркет)"</span>
+</div><div class="hljs-line">        ],
+</div><div class="hljs-line">        <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"099 999 99 99"</span>
+</div><div class="hljs-line">      },
+</div><div class="hljs-line">      <span class="hljs-attr">"payment"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"account_status"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">        <span class="hljs-attr">"additional_information"</span>: [
+</div><div class="hljs-line">          <span class="hljs-string">"Безготівкова для фізичних осіб"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"оплата на розрахунковий рахунок"</span>
+</div><div class="hljs-line">        ],
+</div><div class="hljs-line">        <span class="hljs-attr">"amount_ordered"</span>: <span class="hljs-number">972.02</span>,
+</div><div class="hljs-line">        ...
+</div><div class="hljs-line">        <span class="hljs-attr">"shipping_amount"</span>: <span class="hljs-number">0</span>
+</div><div class="hljs-line">      },
+</div><div class="hljs-line">      <span class="hljs-attr">"status_histories"</span>: [
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"Тест Тестовий: "</span>,
+</div><div class="hljs-line">          ...
+</div><div class="hljs-line">          <span class="hljs-attr">"status"</span>: <span class="hljs-string">"pending"</span>
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">      ],
+</div><div class="hljs-line">      <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">        <span class="hljs-attr">"shipping_assignments"</span>: [
+</div><div class="hljs-line">          {
+</div><div class="hljs-line">            <span class="hljs-attr">"shipping"</span>: {
+</div><div class="hljs-line">              <span class="hljs-attr">"address"</span>: {
+</div><div class="hljs-line">                <span class="hljs-attr">"address_type"</span>: <span class="hljs-string">"shipping"</span>,
+</div><div class="hljs-line">                ...
+</div><div class="hljs-line">                <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"11112"</span>,
+</div><div class="hljs-line">                <span class="hljs-attr">"street"</span>: [
+</div><div class="hljs-line">                  <span class="hljs-string">"Поштомат \"Нова Пошта\" №36321: пров. Чугуївський, 19а (маг. Еко-маркет)"</span>
+</div><div class="hljs-line">                ],
+</div><div class="hljs-line">                <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"099 999 99 99"</span>
+</div><div class="hljs-line">              },
+</div><div class="hljs-line">              <span class="hljs-attr">"method"</span>: <span class="hljs-string">"novaposhta_novaposhta_to_warehouse"</span>,
+</div><div class="hljs-line">              <span class="hljs-attr">"total"</span>: {
+</div><div class="hljs-line">                <span class="hljs-attr">"base_shipping_amount"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">                ...
+</div><div class="hljs-line">                <span class="hljs-attr">"shipping_tax_amount"</span>: <span class="hljs-number">0</span>
+</div><div class="hljs-line">              }
+</div><div class="hljs-line">            },
+</div><div class="hljs-line">            <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">              {
+</div><div class="hljs-line">                <span class="hljs-attr">"amount_refunded"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">                ...
+</div><div class="hljs-line">                <span class="hljs-attr">"weight"</span>: <span class="hljs-number">1.8</span>
+</div><div class="hljs-line">              }
+</div><div class="hljs-line">            ]
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        ],
+</div><div class="hljs-line">        <span class="hljs-attr">"payment_additional_info"</span>: [
+</div><div class="hljs-line">          {
+</div><div class="hljs-line">            <span class="hljs-attr">"key"</span>: <span class="hljs-string">"method_title"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"value"</span>: <span class="hljs-string">"Безготівкова для фізичних осіб"</span>
+</div><div class="hljs-line">          },
+</div><div class="hljs-line">          {
+</div><div class="hljs-line">            <span class="hljs-attr">"key"</span>: <span class="hljs-string">"instructions"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"value"</span>: <span class="hljs-string">"оплата на розрахунковий рахунок"</span>
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        ],
+</div><div class="hljs-line">        <span class="hljs-attr">"applied_taxes"</span>: [],
+</div><div class="hljs-line">        <span class="hljs-attr">"item_applied_taxes"</span>: []
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ],
+</div><div class="hljs-line">  <span class="hljs-attr">"search_criteria"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"filter_groups"</span>: [
+</div><div class="hljs-line">      {
+</div><div class="hljs-line">        <span class="hljs-attr">"filters"</span>: [
+</div><div class="hljs-line">          {
+</div><div class="hljs-line">            <span class="hljs-attr">"field"</span>: <span class="hljs-string">"created_at"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"value"</span>: <span class="hljs-string">"2024-06-28"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"condition_type"</span>: <span class="hljs-string">"gt"</span>
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        ]
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    ]
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-attr">"total_count"</span>: <span class="hljs-number">2</span>
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h3 id="зміна-інформації-про-замовлення">Зміна інформації про замовлення</h3>
+
+
+
+<h4 id="тип-запиту-14">Тип запиту</h4>
+
+<blockquote>
+  <p><em>POST </em></p>
+</blockquote>
+
+
+
+<h4 id="url-7">URL</h4>
+
+<blockquote>
+  <p><a href="https://olimpvm.com.ua/index.php/rest/V1/orders" target="_blank">https://olimpvm.com.ua/index.php/rest/V1/orders</a></p>
+</blockquote>
+
+
+
+<h4 id="заголовки-headers-13">Заголовки (Headers)</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">Content-Type</span>: application/json
+</div><div class="hljs-line"><span class="hljs-attribute">Authorization</span>: Bearer<span class="hljs-built_in">`пробіл`</span>JraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjksInV0eXBpZCI6MiwiaWF0IjoxNzE3MDg2MDU4LCJleHAiOjE3MTcwODk2NTh9.G8pceUzNersTPwWnkJA-k0M8zq1_pZUIDk8fmflGAfM
+</div></code></pre>
+
+<p><strong>Звернить увагу!</strong> Формат значення <code>Authorization</code> має бути таким як в прикладі. Тобто складатися із <code>Bearer</code>   <code>пробіл</code> <code>ключ</code>, де <code>ключ</code> - це значення отримане <a href="#запит-на-отримання-токену">запитом на отримання токену</a>.</p>
+
+
+
+<h4 id="тіло-запиту-request-body-приклад-7">Тіло запиту (Request body). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-json hljs"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"entity"</span>: {
+</div><div class="hljs-line">   <span class="hljs-attr">"entity_id"</span>: <span class="hljs-number">11</span>,
+</div><div class="hljs-line">   <span class="hljs-attr">"state"</span>: <span class="hljs-string">"closed"</span>,
+</div><div class="hljs-line">   <span class="hljs-attr">"status"</span>: <span class="hljs-string">"Closed"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">      <span class="hljs-attr">"shipping_assignments"</span>: [
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">          <span class="hljs-attr">"shipping"</span>: {
+</div><div class="hljs-line">            <span class="hljs-attr">"address"</span>: {
+</div><div class="hljs-line">              <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"John"</span>,
+</div><div class="hljs-line">              <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Doe"</span>,
+</div><div class="hljs-line">              <span class="hljs-attr">"street"</span>: [<span class="hljs-string">"123 New St"</span>],
+</div><div class="hljs-line">              <span class="hljs-attr">"city"</span>: <span class="hljs-string">"San Francisco"</span>,
+</div><div class="hljs-line">              <span class="hljs-attr">"region"</span>: <span class="hljs-string">"California"</span>,
+</div><div class="hljs-line">              <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"94103"</span>,
+</div><div class="hljs-line">              <span class="hljs-attr">"country_id"</span>: <span class="hljs-string">"US"</span>,
+</div><div class="hljs-line">              <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"555-123-4567"</span>
+</div><div class="hljs-line">            }
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">      ]
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    <span class="hljs-attr">"customer_note"</span>: <span class="hljs-string">"Leave package at the front door."</span>
+</div><div class="hljs-line">  }
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<p><strong>В цьому прикладі:</strong></p>
+
+<ul><li><p><strong>state</strong> - стан відповідного замовлення із декількох можливих <a href="https://prnt.sc/A7MwTLEVhlGQ" target="_blank">варіантів.</a></p></li>
+<li><p><strong>status</strong> - наявні <a href="https://prnt.sc/dPtgHfAfmaqb" target="_blank">статуси в системі</a>, можемо створити власні, переклади також присутні.  <br>
+Відповідність <em>status</em> до <em>state</em> можна подивитись тут за <a href="https://prnt.sc/nioWcqN1JV3Y" target="_blank">тут</a> або знайти в адмін панелі Magento за шляхом <code>Stores &gt; Settings &gt; Order Status</code>.  Щоб змінити статус замовлення, обов’язково треба в передати обидва параметри.  В ключ <em>status</em> значення стовпчика <em>Status Code</em> в клюи <em>state</em> відповідне значення <em>State Code</em> зі стовпчика State Code and Title.</p></li>
+</ul>
+
+
+
+<h4 id="відповідь-response-приклад-12">Відповідь (Response). Приклад.</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-json hljs"><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-attr">"base_grand_total"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"base_total_due"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"billing_address_id"</span>: <span class="hljs-number">20</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-31 10:13:59"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"customer_email"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"customer_note"</span>: <span class="hljs-string">"Leave package at the front door."</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"entity_id"</span>: <span class="hljs-number">10</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"grand_total"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"state"</span>: <span class="hljs-string">"pending"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"Pending"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"total_due"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-31 12:13:19"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">"items"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"amount_refunded"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_amount_refunded"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_discount_amount"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_discount_invoiced"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_discount_tax_compensation_amount"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_original_price"</span>: <span class="hljs-number">210.47</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_price"</span>: <span class="hljs-number">210.47</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_price_incl_tax"</span>: <span class="hljs-number">210.47</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_row_invoiced"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_row_total"</span>: <span class="hljs-number">210.47</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_row_total_incl_tax"</span>: <span class="hljs-number">210.47</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_tax_amount"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"base_tax_invoiced"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-31 10:13:59"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"discount_amount"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"discount_invoiced"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"discount_percent"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"free_shipping"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"discount_tax_compensation_amount"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_qty_decimal"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_virtual"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"item_id"</span>: <span class="hljs-number">27</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Запасна частина до обприскувача: Мотор 3.1л"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"no_discount"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"order_id"</span>: <span class="hljs-number">10</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"original_price"</span>: <span class="hljs-number">210.47</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"price"</span>: <span class="hljs-number">210.47</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"price_incl_tax"</span>: <span class="hljs-number">210.47</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"product_id"</span>: <span class="hljs-number">221</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"product_type"</span>: <span class="hljs-string">"simple"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"qty_canceled"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"qty_invoiced"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"qty_ordered"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"qty_refunded"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"qty_shipped"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"quote_item_id"</span>: <span class="hljs-number">591</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"row_invoiced"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"row_total"</span>: <span class="hljs-number">210.47</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"row_total_incl_tax"</span>: <span class="hljs-number">210.47</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"row_weight"</span>: <span class="hljs-number">0.52</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"sku"</span>: <span class="hljs-string">"ЦБ-00000564"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"store_id"</span>: <span class="hljs-number">6</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"tax_amount"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"tax_invoiced"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"tax_percent"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2024-05-31 10:13:59"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"weight"</span>: <span class="hljs-number">0.52</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ],
+</div><div class="hljs-line">  <span class="hljs-attr">"billing_address"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"address_type"</span>: <span class="hljs-string">"billing"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Los Angeles"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"country_id"</span>: <span class="hljs-string">"US"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"customer_address_id"</span>: <span class="hljs-number">4</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"new-customer@example.com"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"entity_id"</span>: <span class="hljs-number">20</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"John"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Doe"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">10</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"90001"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"region"</span>: <span class="hljs-string">"California"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"region_code"</span>: <span class="hljs-string">"CA"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"region_id"</span>: <span class="hljs-number">12</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"street"</span>: [
+</div><div class="hljs-line">      <span class="hljs-string">"123 Main St"</span>
+</div><div class="hljs-line">    ],
+</div><div class="hljs-line">    <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"555-555-5555"</span>
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-attr">"payment"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"account_status"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"additional_information"</span>: [
+</div><div class="hljs-line">      <span class="hljs-string">"Check / Money order"</span>
+</div><div class="hljs-line">    ],
+</div><div class="hljs-line">    <span class="hljs-attr">"amount_ordered"</span>: <span class="hljs-number">215.47</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"base_amount_ordered"</span>: <span class="hljs-number">215.47</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"base_shipping_amount"</span>: <span class="hljs-number">5</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"cc_exp_year"</span>: <span class="hljs-string">"0"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"cc_last4"</span>: <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"cc_ss_start_month"</span>: <span class="hljs-string">"0"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"cc_ss_start_year"</span>: <span class="hljs-string">"0"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"entity_id"</span>: <span class="hljs-number">10</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"checkmo"</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">10</span>,
+</div><div class="hljs-line">    <span class="hljs-attr">"shipping_amount"</span>: <span class="hljs-number">5</span>
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-attr">"status_histories"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"Order Placed by 1c 1c using Admin Panel"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-31 10:13:59"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"entity_id"</span>: <span class="hljs-number">2</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"entity_name"</span>: <span class="hljs-string">"order"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_customer_notified"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_visible_on_front"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">10</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"status"</span>: <span class="hljs-string">"pending"</span>
+</div><div class="hljs-line">    },
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"Order Placed by Store Administrator"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2024-05-31 10:13:59"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"entity_id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"entity_name"</span>: <span class="hljs-string">"order"</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_customer_notified"</span>: <span class="hljs-number">0</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"is_visible_on_front"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">10</span>,
+</div><div class="hljs-line">      <span class="hljs-attr">"status"</span>: <span class="hljs-string">"pending"</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ],
+</div><div class="hljs-line">  <span class="hljs-attr">"extension_attributes"</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">"shipping_assignments"</span>: [
+</div><div class="hljs-line">      {
+</div><div class="hljs-line">        <span class="hljs-attr">"shipping"</span>: {
+</div><div class="hljs-line">          <span class="hljs-attr">"address"</span>: {
+</div><div class="hljs-line">            <span class="hljs-attr">"address_type"</span>: <span class="hljs-string">"shipping"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"city"</span>: <span class="hljs-string">"San Francisco"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"country_id"</span>: <span class="hljs-string">"US"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"entity_id"</span>: <span class="hljs-number">19</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"John"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"Doe"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"parent_id"</span>: <span class="hljs-number">10</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"94103"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"region"</span>: <span class="hljs-string">"California"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"region_code"</span>: <span class="hljs-string">"California"</span>,
+</div><div class="hljs-line">            <span class="hljs-attr">"street"</span>: [
+</div><div class="hljs-line">              <span class="hljs-string">"123 New St"</span>
+</div><div class="hljs-line">            ],
+</div><div class="hljs-line">            <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"555-123-4567"</span>
+</div><div class="hljs-line">          }
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        <span class="hljs-attr">"items"</span>: <span class="hljs-literal">null</span>
+</div><div class="hljs-line">      }
+</div><div class="hljs-line">    ]
+</div><div class="hljs-line">  }
+</div><div class="hljs-line">}
+</div></code></pre></div></body></html>
